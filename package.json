@@ -1,0 +1,16 @@
+{
+  "name": "learning-node.js",
+  "version": "1.0.0",
+  "description": "app.js",
+  "main": "",
+  "scripts": {
+    "start": "node ", 
+    "dev": "nodemon "
+  },
+  "author": "Ridhang",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "nodemon": "^3.0.3"
+  }
+}
