@@ -13,6 +13,26 @@ app.get('/api/people', (req, res)  =>{
   res.status(200).json({IsSuccess: true, data: people})
 })
 
+app.post('/api/postman/people', (req,res) =>{
+  const { name } = req.body;
+  console.log(req.body);
+  if (name) {
+    return res.status(201).json({IsSuccess: true, person: name});  
+  }
+  res.status(400).json({IsSuccess: false, message: 'Please provide data'}); 
+})
+
+app.put('/api/people/:id', (req,res) => {
+  const { id } = req.params
+  const { name } = req.body
+  console.log(`${id}, ${name}`);
+  if ( id ){
+    const personName = people.find((people) => people.id === Number(id));
+    personName.name = name;
+  }
+  res.status(200).json({IsSuccess: true, data: people})
+})
+
 app.post('/login', (req,res) =>{
   console.log(req.body);
   const { name } = req.body;
