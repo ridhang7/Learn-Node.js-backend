@@ -26,7 +26,7 @@ app.put('/api/people/:id', (req,res) => {
   const { id } = req.params
   const { name } = req.body
   console.log(`${id}, ${name}`);
-  if ( id ){
+  if ( id && name ){
     const personName = people.find((people) => people.id === Number(id));
     personName.name = name;
   }
